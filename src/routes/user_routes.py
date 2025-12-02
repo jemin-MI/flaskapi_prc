@@ -5,6 +5,7 @@ user_bp = Blueprint("users", __name__)
 
 @user_bp.get("/")
 def list_users():
+    print("User called")
     users = get_all_users()
     return jsonify([{"id": u.id, "name": u.name, "email": u.email} for u in users])
 
